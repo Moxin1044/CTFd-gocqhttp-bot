@@ -15,14 +15,17 @@ def load_page(route, plugin_dir='.'):
         feishutoken = request.args.get("feishutoken")
         type = request.args.get("type")
         submit = request.args.get("submit")
-        message = {"address": "Go-CQ-HTTP听守的地址和端口", "groupid": "通知的QQ群号码", "goauth": "Authorization", "feishuid": "飞书机器人的Token"}
         if submit and address and qqgroup and Authorization and feishutoken and type:
             if view_go_cq_http_config():
                 update_go_cq_http_config(address, qqgroup, Authorization, feishutoken, type)
             else:
                 add_go_cq_http_config(address, qqgroup, Authorization, feishutoken, type)
         else:
-            message = view_go_cq_http_config()
+            if view_go_cq_http_config():
+                message = view_go_cq_http_config()
+            else:
+                message = {"address": "Go-CQ-HTTP听守的地址和端口", "groupid": "通知的QQ群号码",
+                           "goauth": "Authorization", "feishuid": "飞书机器人的Token"}
         return render_template("gocqhttp_config.html", gocqaddress=message['address'], gocqgroupnumber=message['groupid'], gocqAuthorization=message['goauth'], gocqfeishutoken=message['feishuid'])
 
     return pages
