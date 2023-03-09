@@ -1,0 +1,74 @@
+{% extends "admin/base.html" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron No-Background">
+	<div class="container" style="border-radius: 25px;margin-top:50px;background: no-repeat rgba(255, 255, 255, 0.2); border: 2px solid rgba(12, 71, 192, 0);background-position: bottom right; background-repeat: no-repeat; width: 400px">
+		<h1>GO-CQHTTP<br>机器人配置</h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>配置信息:</h3>
+			<br>
+			<form id="go-cqconfig" method="GET">
+				<div class="form-group">
+					<div class="col-md-12">
+						<b><label for="title">Go-CQHTTP 请求地址：</label></b>
+						<input class="form-control radius" id="address" name="address" placeholder="Go-CQ-HTTP听守的地址和端口" type="text" value="{{ gocqaddress }}">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12">
+						<b><label for="title">QQ群号：</label></b>
+						<input class="form-control radius" id="qqgroup" name="qqgroup" placeholder="通知的QQ群号码" type="text" value="{{ gocqgroupnumber }}">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12">
+						<b><label for="title">Go-CQHTTP Authorization:</label></b>
+						<input class="form-control radius" id="Authorization" name="Authorization" placeholder="Authorization" type="text" value="{{ gocqAuthorization }}">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12">
+						<b><label for="title">飞书机器人Token：</label></b>
+						<input class="form-control radius" id="feishutoken" name="feishutoken" placeholder="飞书机器人的Token" type="text" value="{{ gocqfeishutoken }}">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12">
+						<b><label for="title">机器人状态：</label></b>
+						<div class="form-check form-check-inline">
+							<select class="form-control form-inline custom-select" id="type-select" name="type"><option value="open">开启</option><option value="off">关闭</option></select>
+						</div>
+					</div>
+				</div>
+				<input class="btn btn-primary btn-outlined float-right modal-action" id="update-user" name="submit" type="submit" value="提交">
+			</form>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>说明：</h3>
+			<p>作者：末心<br>
+			GitHub：<a href="https://github.com/Moxin1044">https://github.com/Moxin1044</a><br>
+			当前版本：Ver1.0<br>
+			QQ群：797842833</p>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block entrypoint %}
+	<script defer src="{{ url_for('views.themes', theme='admin', path='js/pages/pages.js') }}"></script>
+{% endblock %}
