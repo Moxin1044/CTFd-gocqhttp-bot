@@ -20,16 +20,18 @@ class GoCQHttpDB(db.Model):
 
 def view_go_cq_http_config():
     godb = db.session.query(GoCQHttpDB).all()
+    print("test->>> ", len(godb))
     if len(godb) == 0:
         return False
     else:
         for item in godb:
-            return {"address": item.address, "groupid": item.groupid, "goauth": item.goauth, "feishuid": item.feishuid, "robotstatus": item.robotstatus}
+            return {"address": str(item.address), "groupid": str(item.groupid), "goauth": str(item.goauth), "feishuid": str(item.feishuid), "robotstatus": str(item.robotstatus)}
 
 
 def update_go_cq_http_config(address, groupid, goauth, feishuid, robotstatus):
     godb = db.session.query(GoCQHttpDB).filter(GoCQHttpDB.id==1).update({"address": address, "groupid": groupid, "goauth": goauth, "feishuid": feishuid, "robotstatus": robotstatus})
     db.session.commit()
+
 
 def add_go_cq_http_config(address, groupid, goauth, feishuid, robotstatus):
     if view_go_cq_http_config():
