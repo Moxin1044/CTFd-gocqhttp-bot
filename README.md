@@ -2,10 +2,10 @@
 这是一个GO-CQHTTP的CTFd插件，主要功能有：题目提交提醒、题目flag正确提醒等、题目提交过快提醒等。
 
 # 使用
-您需要把`CTFd/Plugin/`中的challenges替换为我的challenges，接着将gocqhttpbot也放到`CTFd/Plugin/`目录中。
+您需要把`CTFd/plugins/`中的challenges替换为我的challenges，接着将gocqhttpbot也放到`CTFd/plugins/`目录中。
 
 # 后台登陆检测
-
+**血的教训：**
 后台登陆检测需要在其他文件中定义，下面是定义方法:
 
 修改`CTFd/admin/__init__.py`，在头部引用我们的插件：

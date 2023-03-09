@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-from CTFd.Plugin.gocqhttpbot.gocq import flag_true,group_flag_post,flag_error
+from CTFd.plugins.gocqhttpbot.gocq import flag_true,group_flag_post,flag_error
 import requests
 import datetime # time()
 
