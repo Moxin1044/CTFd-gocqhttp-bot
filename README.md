@@ -10,7 +10,7 @@
 
 修改`CTFd/admin/__init__.py`，在头部引用我们的插件：
 ```python
-from CTFd.Plugin.gocqhttpbot.gocq from send_admin_ip
+from CTFd.Plugins.gocqhttpbot.gocq from send_admin_ip
 ```
 找到：
 ```python
