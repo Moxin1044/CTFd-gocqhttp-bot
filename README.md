@@ -41,3 +41,7 @@ def view():
 关于`Authorization`：如果你没有启用GO-CQHTTP的`access-token`，那么你填写的为空即可（这个我真的没测试，因为**安全**起见，我建议大家一定要启用Authorization！！！！安全第一！！！）
 
 插件采用HTTP通信接口，你需要的是填写你当前服务器的IP地址加上监听端口（Go-CQHTTP的`server`-`http`-`address`那里的端口。）
+
+# 勘误：
+- https://github.com/Moxin1044/CTFd-gocqhttp-bot/issues/1#issue-1659423905
+> README.md中引入`CTFd/admin/__init__.py`的语句错误。
